@@ -1,0 +1,107 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Ensures that the background doesn't interfere with other elements */
+    overflow: hidden; /* Prevents the background from scrolling */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://4xwallpapers.com/wp-content/uploads/2024/01/gif-wallpaper.gif') no-repeat center center fixed; /* Sample Background GIF */
+    background-size: cover; /* Ensures the GIF covers the whole background */
+    z-index: -1; /* Puts the background below the container */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ensures content is centered vertically */
+    text-align: center; /* Ensures all text and button content are centered */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Ensures that the container is above the blurred background */
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box; /* Ensures padding/border are included in width calculation */
+    background-color: #f9f9f9; /* Light background color for inputs */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Input Focus Styles */
+input:focus {
+    border-color: #2575fc; /* Blue border when focused */
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.5); /* Subtle glow effect */
+    background-color: #e9f1ff; /* Light blue background when focused */
+}
+
+/* Input hover effect */
+input:hover {
+    border-color: #6e55ec; /* Purple border on hover */
+    background-color: #f1f1f1; /* Slight darkening of background on hover */
+}
+
+/* Button Styles */
+button {
+    padding: 15px;
+    width: auto; /* Ensures the button adjusts based on the content inside */
+    background: linear-gradient(45deg, #6e55ec, #5652de);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center; /* Ensures text is centered in the button */
+    align-self: center; /* This makes sure the button is centered horizontally */
+    border-radius: 8px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(45deg, #234bec, #3319dc);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Password Box Styles */
+.password-box {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    input, button {
+        width: 90%; /* Ensures input boxes and button have consistent width on smaller screens */
+    }
+}
